@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const API_BASE = "https://feathersdigitale.onrender.com";
+
   const fab = document.getElementById("ai-fab");
   const panel = document.getElementById("ai-panel");
   const closeBtn = document.getElementById("ai-close");
@@ -44,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addMessage(text, "user");
 
     try {
-      const API_BASE = "https://TON-SERVICE.onrender.com"; // <-- remplace par ton URL Render
       const res = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -61,7 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      addMessage(data.reply ?? "Je n’ai pas de réponse pour le moment.", "bot");
+      addMessage(
+        data.reply ?? "Je n’ai pas de réponse pour le moment.",
+        "bot"
+      );
+
     } catch (err) {
       console.error("[AI] network error", err);
       addMessage("Erreur réseau (serveur indisponible).", "bot");
