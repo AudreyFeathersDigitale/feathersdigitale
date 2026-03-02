@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     addMessage(text, "user");
 
     try {
-      const res = await fetch("/api/chat", {
+      const API_BASE = "https://TON-SERVICE.onrender.com"; // <-- remplace par ton URL Render
+      const res = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text })
