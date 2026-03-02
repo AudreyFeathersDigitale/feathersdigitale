@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Feather’s Digitale</title>
+  <meta name="description" content="Services d’assistance virtuelle : automatisation, organisation, administration et réseaux sociaux.">
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ai-widget.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/index.html" class="brand" aria-label="Feather’s Digitale - Accueil">
+      <span>🪶</span>
+      <span>Feather’s Digitale</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/services.html" aria-current="page">Services</a>
+      <a href="/offres.html">Offres</a>
+      <a href="/apropos.html">À propos</a>
+      <a href="/contact.html" class="btn btn--small">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding:70px 0 90px;">
+  <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:flex-end;">
+    <h1 style="margin:0;">Contact</h1>
+    <p style="margin:0; color:var(--muted); font-weight:700;">Réponse sous 24–48h</p>
+  </div>
+
+  <p class="lead" style="margin:14px 0 28px;">
+    Dis-moi ton activité, ce que tu veux déléguer (automatisation/admin/réseaux), ton délai et si tu préfères un format ponctuel ou mensuel.
+  </p>
+
+  <div class="panel">
+    <form action="https://formsubmit.co/mouton.audrey70@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nouveau message — Feather’s Digitale" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <div class="hero__grid" style="grid-template-columns:1fr 1fr; gap:18px;">
+        <div>
+          <label>
+            <strong>Nom</strong><br />
+            <input type="text" name="name" placeholder="Ton nom" required
+              style="width:100%; margin-top:8px; padding:12px; border-radius:12px; border:1px solid var(--stroke);" />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <strong>Email</strong><br />
+            <input type="email" name="email" placeholder="Ton email" required
+              style="width:100%; margin-top:8px; padding:12px; border-radius:12px; border:1px solid var(--stroke);" />
+          </label>
+        </div>
+
+        <div style="grid-column:1 / -1;">
+          <label>
+            <strong>Message</strong><br />
+            <textarea name="message" rows="6"
+              placeholder="Ex : je suis coach, je veux automatiser mon suivi client + déléguer l’admin 5h/semaine…" required
+              style="width:100%; margin-top:8px; padding:12px; border-radius:12px; border:1px solid var(--stroke);"></textarea>
+          </label>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:16px;">
+        <button class="btn" type="submit">Envoyer</button>
+        <a class="btn btn--ghost" href="/services.html">Voir les services</a>
+      </div>
+
+      <p style="margin:14px 0 0; color:var(--muted); font-size:14px;">
+        En envoyant ce formulaire, tu acceptes d’être recontacté·e.
+      </p>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>© <span id="year"></span> Feather’s Digitale</div>
+    <div class="footer__links">
+      <a href="/services.html">Services</a>
+      <a href="/offres.html">Offres</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WIDGET IA -->
+<button id="ai-fab" aria-label="Ouvrir l'assistant">
+  <img src="/assets/mascotte.png" alt="Assistant" />
+</button>
+
+<div id="ai-panel" aria-hidden="true">
+  <div class="ai-header">
+    <div class="ai-title">
+      <div class="ai-avatar-wrap">
+        <img id="ai-avatar" src="/assets/mascotte.png" alt="Mascotte" />
+      </div>
+      <div>
+        <div class="ai-name">Assistant Feather’s</div>
+        <div class="ai-sub">Services • Offres • Tarifs • Contact</div>
+      </div>
+    </div>
+    <button id="ai-close" class="ai-icon-btn" aria-label="Fermer">✕</button>
+  </div>
+
+  <div id="ai-messages" class="ai-messages"></div>
+
+  <div class="ai-quick">
+    <button class="ai-chip" data-q="Quels services proposes-tu ?">Services</button>
+    <button class="ai-chip" data-q="Quels sont tes tarifs ?">Tarifs</button>
+    <button class="ai-chip" data-q="Comment on démarre ?">Démarrer</button>
+  </div>
+
+  <form id="ai-form" class="ai-form">
+    <input id="ai-input" type="text" placeholder="Pose ta question…" autocomplete="off" />
+    <button class="ai-send" type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script>
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+</script>
+
+<!-- Scripts -->
+<script src="/script.js" defer></script>
+<script src="/ai-widget.js" defer></script>
+
+<!-- WIDGET IA -->
+<button id="ai-fab" aria-label="Ouvrir l'assistant">
+  <img src="/assets/mascotte.png" alt="Assistant" />
+</button>
+
+<div id="ai-panel" aria-hidden="true">
+  <div class="ai-header">
+    <div class="ai-title">
+      <div class="ai-avatar-wrap">
+        <img id="ai-avatar" src="/assets/mascotte.png" alt="Mascotte" />
+      </div>
+      <div>
+        <div class="ai-name">Assistant Feather’s</div>
+        <div class="ai-sub">Services • Offres • Tarifs • Contact</div>
+      </div>
+    </div>
+    <button id="ai-close" class="ai-icon-btn">✕</button>
+  </div>
+
+  <div id="ai-messages" class="ai-messages"></div>
+
+  <div class="ai-quick">
+    <button class="ai-chip" data-q="Quels services proposes-tu ?">Services</button>
+    <button class="ai-chip" data-q="Quels sont tes tarifs ?">Tarifs</button>
+    <button class="ai-chip" data-q="Comment on démarre ?">Démarrer</button>
+  </div>
+
+  <form id="ai-form" class="ai-form">
+    <input id="ai-input" type="text" placeholder="Pose ta question…" autocomplete="off" />
+    <button class="ai-send" type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script src="/ai-widget.js" defer></script>
+</body>
+</html>

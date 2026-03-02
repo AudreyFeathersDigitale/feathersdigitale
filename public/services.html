@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Feather’s Digitale</title>
+  <meta name="description" content="Services d’assistance virtuelle : automatisation, organisation, administration et réseaux sociaux.">
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/ai-widget.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/index.html" class="brand" aria-label="Feather’s Digitale - Accueil">
+      <span>🪶</span>
+      <span>Feather’s Digitale</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/services.html" aria-current="page">Services</a>
+      <a href="/offres.html">Offres</a>
+      <a href="/apropos.html">À propos</a>
+      <a href="/contact.html" class="btn btn--small">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+
+  <section class="page__head">
+    <h1>Services</h1>
+    <p class="page__sub">
+      Je t’aide à structurer ton back-office, fluidifier ton quotidien et garder une présence régulière — sans surcharge.
+    </p>
+  </section>
+
+  <section class="cards-3">
+
+    <article class="panel card">
+      <h2>Automatisation & organisation</h2>
+      <ul class="list">
+        <li>Notion : CRM, suivi clients, contenus</li>
+        <li>Templates, checklists, process</li>
+        <li>Optimisation du flux de travail</li>
+      </ul>
+    </article>
+
+    <article class="panel card">
+      <h2>Administration</h2>
+      <ul class="list">
+        <li>Gestion mails & agenda</li>
+        <li>Word / Excel : documents & tableaux</li>
+        <li>Préparation + relances (selon process)</li>
+      </ul>
+    </article>
+
+    <article class="panel card">
+      <h2>Réseaux sociaux</h2>
+      <ul class="list">
+        <li>Créations Canva (posts, templates)</li>
+        <li>Calendrier éditorial + programmation</li>
+        <li>Optimisation bio & cohérence visuelle</li>
+      </ul>
+    </article>
+
+  </section>
+
+  <div class="page-cta">
+    <a href="/offres.html" class="btn">Voir les offres</a>
+    <a href="/contact.html" class="btn btn--ghost">Parler de ton besoin</a>
+  </div>
+
+  <section class="steps-wrap">
+
+    <div class="steps-head">
+      <h2>Comment ça se passe ?</h2>
+      <p>Simple, clair, cadré — pour avancer vite sans stress.</p>
+    </div>
+
+    <div class="steps-3">
+
+      <article class="panel step-card">
+        <div class="step-n">1</div>
+        <h3>Cadrage</h3>
+        <p>
+          Tu m’expliques ton activité, ce que tu veux déléguer,
+          ton délai et ton format (ponctuel/mensuel).
+        </p>
+      </article>
+
+      <article class="panel step-card">
+        <div class="step-n">2</div>
+        <h3>Mise en place</h3>
+        <p>
+          On structure : outils, process, accès, priorités.
+          Je te propose une organisation simple et efficace.
+        </p>
+      </article>
+
+      <article class="panel step-card">
+        <div class="step-n">3</div>
+        <h3>Exécution & suivi</h3>
+        <p>
+          Je gère les tâches, je te tiens informé·e,
+          et on ajuste au fil de l’eau pour gagner en fluidité.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>© <span id="year"></span> Feather’s Digitale</div>
+    <div class="footer__links">
+      <a href="/services.html">Services</a>
+      <a href="/offres.html">Offres</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WIDGET IA -->
+<button id="ai-fab" aria-label="Ouvrir l'assistant">
+  <img src="/assets/mascotte.png" alt="Assistant" />
+</button>
+
+<div id="ai-panel" aria-hidden="true">
+  <div class="ai-header">
+    <div class="ai-title">
+      <div class="ai-avatar-wrap">
+        <img id="ai-avatar" src="/assets/mascotte.png" alt="Mascotte" />
+      </div>
+      <div>
+        <div class="ai-name">Assistant Feather’s</div>
+        <div class="ai-sub">Services • Offres • Tarifs • Contact</div>
+      </div>
+    </div>
+    <button id="ai-close" class="ai-icon-btn" aria-label="Fermer">✕</button>
+  </div>
+
+  <div id="ai-messages" class="ai-messages"></div>
+
+  <div class="ai-quick">
+    <button class="ai-chip" data-q="Quels services proposes-tu ?">Services</button>
+    <button class="ai-chip" data-q="Quels sont tes tarifs ?">Tarifs</button>
+    <button class="ai-chip" data-q="Comment on démarre ?">Démarrer</button>
+  </div>
+
+  <form id="ai-form" class="ai-form">
+    <input id="ai-input" type="text" placeholder="Pose ta question…" autocomplete="off" />
+    <button class="ai-send" type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script>
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+</script>
+
+<script src="/script.js" defer></script>
+<script src="/ai-widget.js" defer></script>
+
+<!-- WIDGET IA -->
+<button id="ai-fab" aria-label="Ouvrir l'assistant">
+  <img src="/assets/mascotte.png" alt="Assistant" />
+</button>
+
+<div id="ai-panel" aria-hidden="true">
+  <div class="ai-header">
+    <div class="ai-title">
+      <div class="ai-avatar-wrap">
+        <img id="ai-avatar" src="/assets/mascotte.png" alt="Mascotte" />
+      </div>
+      <div>
+        <div class="ai-name">Assistant Feather’s</div>
+        <div class="ai-sub">Services • Offres • Tarifs • Contact</div>
+      </div>
+    </div>
+    <button id="ai-close" class="ai-icon-btn">✕</button>
+  </div>
+
+  <div id="ai-messages" class="ai-messages"></div>
+
+  <div class="ai-quick">
+    <button class="ai-chip" data-q="Quels services proposes-tu ?">Services</button>
+    <button class="ai-chip" data-q="Quels sont tes tarifs ?">Tarifs</button>
+    <button class="ai-chip" data-q="Comment on démarre ?">Démarrer</button>
+  </div>
+
+  <form id="ai-form" class="ai-form">
+    <input id="ai-input" type="text" placeholder="Pose ta question…" autocomplete="off" />
+    <button class="ai-send" type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script src="/ai-widget.js" defer></script>
+</body>
+</html>

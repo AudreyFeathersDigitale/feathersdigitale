@@ -1,0 +1,235 @@
+/* ===============================
+   AI WIDGET — Feather’s Digitale
+   - Bouton mascotte sans bulle
+   - Panel chat premium
+================================== */
+
+:root{
+  --ai-brown:#6B4F3A;
+  --ai-brown-dark:#4A3426;
+  --ai-border:rgba(28,28,28,.10);
+  --ai-shadow:0 24px 70px rgba(28,28,28,.12);
+  --ai-muted:#5A514A;
+}
+
+/* ---------- BOUTON FLOTTANT (sans bulle) ---------- */
+#ai-fab{
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+
+  width: 110px;      /* <- taille mascotte */
+  height: 110px;
+  border: none;
+  background: transparent;   /* ✅ plus de bulle blanche */
+  border-radius: 0;          /* ✅ pas de cercle */
+  padding: 0;
+  cursor: pointer;
+  z-index: 9999;
+
+  display: grid;
+  place-items: center;
+
+  /* ombre légère sur l'image (pas sur une bulle) */
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,.18));
+  transition: transform .18s ease;
+}
+
+#ai-fab:hover{
+  transform: translateY(-3px) scale(1.04);
+}
+
+#ai-fab img{
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display:block;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+
+/* ---------- PANEL ---------- */
+#ai-panel{
+  position: fixed;
+  right: 18px;
+  bottom: 140px;
+
+  width: 390px;
+  max-height: 640px;
+  background: #fff;
+  border: 1px solid var(--ai-border);
+  border-radius: 20px;
+  box-shadow: var(--ai-shadow);
+
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+#ai-panel.open{ display:flex; }
+
+/* ---------- HEADER ---------- */
+.ai-header{
+  padding: 14px 16px;
+  background: rgba(248,248,240,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ai-border);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.ai-title{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.ai-avatar-wrap{
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(107,79,58,.08);
+  display:grid;
+  place-items:center;
+}
+
+#ai-avatar{
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.ai-name{
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.ai-sub{
+  font-size: 12px;
+  color: var(--ai-muted);
+  margin-top: 2px;
+}
+
+.ai-icon-btn{
+  border:none;
+  background:transparent;
+  font-size:18px;
+  cursor:pointer;
+  color: var(--ai-muted);
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+.ai-icon-btn:hover{
+  background: rgba(107,79,58,.10);
+  color: #1c1c1c;
+}
+
+/* ---------- MESSAGES ---------- */
+.ai-messages{
+  padding: 14px 16px;
+  overflow-y: auto;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(107,79,58,.03), #fff);
+}
+
+.ai-message{
+  margin-bottom: 12px;
+  max-width: 90%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.ai-user{
+  margin-left: auto;
+  background: var(--ai-brown);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 14px 14px 6px 14px;
+  font-weight: 700;
+}
+
+.ai-bot{
+  margin-right: auto;
+  background: #F6F3EF;
+  color: #1c1c1c;
+  padding: 10px 12px;
+  border-radius: 14px 14px 14px 6px;
+}
+
+/* ---------- QUICK BUTTONS ---------- */
+.ai-quick{
+  padding: 10px 14px;
+  border-top: 1px solid var(--ai-border);
+  background: #fff;
+
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ai-chip{
+  background: rgba(107,79,58,.10);
+  border: none;
+  border-radius: 999px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+.ai-chip:hover{
+  background: rgba(107,79,58,.18);
+}
+
+/* ---------- INPUT ---------- */
+.ai-form{
+  display:flex;
+  border-top: 1px solid var(--ai-border);
+  background:#fff;
+}
+
+#ai-input{
+  flex: 1;
+  padding: 12px 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.ai-send{
+  padding: 0 16px;
+  border: none;
+  background: var(--ai-brown);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+}
+.ai-send:hover{
+  background: var(--ai-brown-dark);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 520px){
+  #ai-panel{
+    left: 12px;
+    right: 12px;
+    width: auto;
+    bottom: 140px;
+    max-height: 70vh;
+  }
+
+  #ai-fab{
+    right: 10px;
+    bottom: 10px;
+    width: 96px;
+    height: 96px;
+  }
+  #ai-fab img{
+    width: 96px;
+    height: 96px;
+  }
+}

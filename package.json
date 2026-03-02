@@ -1,0 +1,18 @@
+{
+  "name": "feathers-digitale",
+  "version": "1.0.0",
+  "description": "Site vitrine Feather's Digitale avec assistant IA intégré",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Feather's Digitale",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.3.0",
+    "openai": "^4.0.0"
+  }
+}

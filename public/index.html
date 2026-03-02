@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather’s Digitale</title>
+  <meta name="description" content="Assistance virtuelle polyvalente : automatisation, admin, organisation et réseaux sociaux." />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/ai-widget.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="/index.html" aria-label="Feather’s Digitale - Accueil" aria-current="page">
+      <span>🪶</span>
+      <span>Feather’s Digitale</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/services.html">Services</a>
+      <a href="/offres.html">Offres</a>
+      <a href="/apropos.html">À propos</a>
+      <a href="/contact.html" class="btn btn--small">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+
+      <span class="hero-badge--top">À distance • Automatisation • Admin • Réseaux sociaux</span>
+
+      <div class="hero__grid">
+        <div class="hero-head">
+          <h1 class="hero-title">
+            Délègue l’opérationnel.<br />
+            Gagne du temps.<br />
+            <span class="highlight-word">Accélère.</span>
+          </h1>
+
+          <p class="lead">
+            Assistance virtuelle polyvalente pour <strong>solopreneurs, coachs, artisans, TPE/PME</strong>.
+            Je t’aide à structurer, automatiser et exécuter — avec une organisation claire et un suivi fiable.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="/services.html">Voir les services</a>
+            <a class="btn btn--ghost" href="/apropos.html">Qui je suis</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Ce que tu gagnes">
+          <h2>Ce que tu gagnes</h2>
+          <ul class="list">
+            <li>Moins de charge mentale</li>
+            <li>Un back-office structuré (Notion, Google Workspace, Excel…)</li>
+            <li>Des tâches qui avancent sans relances</li>
+            <li>Une présence réseaux plus régulière</li>
+          </ul>
+
+          <div class="panel__cta">
+            <a class="btn" href="/services.html">Voir les services</a>
+            <a class="btn btn--ghost" href="/contact.html">Me contacter</a>
+          </div>
+        </aside>
+      </div>
+
+      <ul class="trust trust--bottom" aria-label="Qualités">
+        <li>⚡ Rapide & organisée</li>
+        <li>🧠 Process & automatisation</li>
+        <li>🤎 Pro et chaleureuse</li>
+      </ul>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>© <span id="year"></span> Feather’s Digitale</div>
+    <div class="footer__links">
+      <a href="/services.html">Services</a>
+      <a href="/offres.html">Offres</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WIDGET IA -->
+<button id="ai-fab" aria-label="Ouvrir l'assistant">
+  <img src="/assets/mascotte.png" alt="Assistant" />
+</button>
+
+<div id="ai-panel" aria-hidden="true">
+  <div class="ai-header">
+    <div class="ai-title">
+      <div class="ai-avatar-wrap">
+        <img id="ai-avatar" src="/assets/mascotte.png" alt="Mascotte" />
+      </div>
+      <div>
+        <div class="ai-name">Assistant Feather’s</div>
+        <div class="ai-sub">Services • Offres • Tarifs • Contact</div>
+      </div>
+    </div>
+    <button id="ai-close" class="ai-icon-btn" aria-label="Fermer">✕</button>
+  </div>
+
+  <div id="ai-messages" class="ai-messages"></div>
+
+  <div class="ai-quick">
+    <button class="ai-chip" data-q="Quels services proposes-tu ?">Services</button>
+    <button class="ai-chip" data-q="Quels sont tes tarifs ?">Tarifs</button>
+    <button class="ai-chip" data-q="Comment on démarre ?">Démarrer</button>
+  </div>
+
+  <form id="ai-form" class="ai-form">
+    <input id="ai-input" type="text" placeholder="Pose ta question…" autocomplete="off" />
+    <button class="ai-send" type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script>
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+</script>
+
+<script src="/script.js" defer></script>
+<script src="/ai-widget.js" defer></script>
+</body>
+</html>
